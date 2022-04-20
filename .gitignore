@@ -78,4 +78,5 @@ tpc.cfg
 
 # TextDraw local files
 XMSDebug.bin
+bin/
 
