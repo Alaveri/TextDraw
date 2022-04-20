@@ -67,3 +67,15 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+
+# Turbo Pascal local files
+
+*.tpu
+*.bak
+*.tp
+tpc.cfg
+*.tp
+
+# TextDraw local files
+XMSDebug.bin
+
