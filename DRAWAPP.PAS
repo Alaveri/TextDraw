@@ -80,7 +80,9 @@ begin
   TextDriver.CursorOff;
   TTextApplication.Init;
   InitControls;
-  {Desktop^.Draw;}
+  Desktop^.Draw;
+  TextDriver.SetXY(10, 10);
+  TextDriver.Write('This is a test of the font system.');
   MouseDriver.ShowMouse;
 end;
 
