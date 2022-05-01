@@ -1,4 +1,4 @@
-{$I Compiler.Inc}
+{$I COMPILER.TXT}
 unit Globals;
 
 interface

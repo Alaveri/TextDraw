@@ -1,4 +1,4 @@
-{$I compiler.inc}
+{$I COMPILER.TXT}
 program TextDraw(input, output);
 
 uses
