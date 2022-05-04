@@ -1,3 +1,4 @@
+{$I COMPILER.INC}
 unit DrawApp;
 
 interface
@@ -68,6 +69,7 @@ end;
 
 procedure TDrawApp.InitControls;
 begin
+  TTextApplication.InitControls;
   InitMenuBar;
 end;
 
@@ -76,7 +78,7 @@ var
   st: TWideString;
   rect: TRect;
 begin
-  TApplication.Init;
+  TTextApplication.Init;
   TypeName := 'TDrawApp';
   InitTextDriver(tdSvgaText, 'SVgaText128x48x8');
   if (TextDriver.Error.ErrorCode <> ecNone) then
@@ -89,8 +91,8 @@ begin
   begin
     WriteLn('Text Driver initialized.');
   end;
+  InitMemory;
   TextDriver.CursorOff;
-  TTextApplication.Init;
   InitControls;
   Desktop^.Draw;
   MouseDriver.ShowMouse;
@@ -98,7 +100,7 @@ end;
 
 destructor TDrawApp.Done;
 begin
-  TextDriver.Done;
+  TTextApplication.Done;
 end;
 
 end.

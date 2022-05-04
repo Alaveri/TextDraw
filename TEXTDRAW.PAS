@@ -1,4 +1,4 @@
-{$I COMPILER.TXT}
+{$I COMPILER.INC}
 program TextDraw(input, output);
 
 uses
@@ -11,7 +11,7 @@ uses
 begin
   ExeName := ParamStr(0);
   AppDirectory := ExtractFilePath(ExeName);
-  App.Create('Application', 65536);
+  App.Create('Application', 65535);
   App.Run;
   App.Done;
 
