@@ -81,9 +81,9 @@ begin
   TTextApplication.Init;
   TypeName := 'TDrawApp';
   InitTextDriver(tdSvgaText, 'SVgaText128x48x8');
-  if (TextDriver.Error.ErrorCode <> ecNone) then
+  if (TextDriver^.Error.ErrorCode <> ecNone) then
   begin
-    WriteLn('Error: ', TextDriver.Error.ErrorCode, ': ', TextDriver.Error.ErrorMessage);
+    WriteLn('Error: ', TextDriver^.Error.ErrorCode, ': ', TextDriver^.Error.ErrorMessage);
     Close;
     exit;
   end
@@ -91,10 +91,10 @@ begin
   begin
     WriteLn('Text Driver initialized.');
   end;
-  TextDriver.CursorOff;
+  TextDriver^.CursorOff;
   InitControls;
   Desktop^.Draw;
-  MouseDriver.ShowMouse;
+  MouseDriver^.ShowMouse;
 end;
 
 destructor TDrawApp.Done;
