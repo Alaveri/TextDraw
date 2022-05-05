@@ -12,14 +12,14 @@ uses
   WideStr,
   GraphDrv,
   Apps,
-  TextApp,
+  GrTxtApp,
   Drawing,
   Utils,
   Controls,
   MouseDrv;
 
 type
-  TDrawApp = object(TTextApplication)
+  TDrawApp = object(TGraphicTextApplication)
   private
   public
     procedure MainLoop; virtual;
@@ -36,7 +36,7 @@ procedure TDrawApp.ProcessEvents;
 var
   ch: char;
 begin
-  TTextApplication.ProcessEvents;
+  TGraphicTextApplication.ProcessEvents;
   if (KeyPressed) then
   begin
     ch := ReadKey;
@@ -46,7 +46,7 @@ end;
 
 procedure TDrawApp.MainLoop;
 begin
-  TTextApplication.MainLoop;
+  TGraphicTextApplication.MainLoop;
 end;
 
 procedure TDrawApp.InitMenuBar;
@@ -69,7 +69,7 @@ end;
 
 procedure TDrawApp.InitControls;
 begin
-  TTextApplication.InitControls;
+  TGraphicTextApplication.InitControls;
   InitMenuBar;
 end;
 
@@ -78,7 +78,7 @@ var
   st: TWideString;
   rect: TRect;
 begin
-  TTextApplication.Init;
+  TGraphicTextApplication.Init;
   TypeName := 'TDrawApp';
   InitTextDriver(tdSvgaText, 'SVgaText128x48x8');
   if (TextDriver^.Error.ErrorCode <> ecNone) then
@@ -94,12 +94,11 @@ begin
   TextDriver^.CursorOff;
   InitControls;
   Desktop^.Draw;
-  MouseDriver^.ShowMouse;
 end;
 
 destructor TDrawApp.Done;
 begin
-  TTextApplication.Done;
+  TGraphicTextApplication.Done;
 end;
 
 end.
