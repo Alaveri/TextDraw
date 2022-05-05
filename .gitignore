@@ -79,5 +79,5 @@ tpc.cfg
 # TextDraw local files
 XMSDebug.bin
 
-*.PSM
+bp.PSM
 *.$$$
