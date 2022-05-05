@@ -91,7 +91,6 @@ begin
   begin
     WriteLn('Text Driver initialized.');
   end;
-  InitMemory;
   TextDriver.CursorOff;
   InitControls;
   Desktop^.Draw;
